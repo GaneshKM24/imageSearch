@@ -1,0 +1,191 @@
+body{
+    background-color: #f9f9f9;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+}
+h1{
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    margin-bottom: 60px;
+}
+/* .result-box{
+    background-color: #008cba;
+    width: 20%;
+    margin-right: 110px;
+    margin-top: 0px;
+    max-height: 300px;
+    overflow-y: scroll;
+} */
+/* Autocomplete box styling */
+.result-box {
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+    width: 50%; /* Match with the input width */
+    max-width: 370px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 2px;
+    z-index: 10;
+}
+
+/* Remove bullet points from autocomplete list */
+.result-box ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Individual autocomplete item styling */
+.result-box ul li {
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect for autocomplete items */
+.result-box ul li:hover {
+    background-color: #f0f0f0;
+}
+
+/* Adjustments for mobile view */
+@media screen and (max-width: 500px) {
+    .result-box {
+        width: 80%;
+    }
+    .result-box ul li {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+#search-input{
+    width: 60%;
+    max-width: 400px;
+    padding: 10px 20px;
+    border: none;
+    box-shadow: 0 0 5px rgb(0, 0,0,.2);
+    outline: none;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #333;
+}
+#search-button{
+    padding: 10px 20px;
+    background-color:#008cba;
+    color: white;
+    border: none;
+    font-size: 18px;
+    box-shadow: 0 0 5px rgb(0, 0,0,.2);
+    cursor: pointer;
+    border-radius: 5px;
+}
+.search-results{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 400px;
+}
+.search-result{
+    margin-bottom: 60px;
+    width: 30%;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+    overflow: hidden;
+}
+.search-result:hover img{
+    transform: scale(1.05);
+}
+.search-result img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform .3s ease-in-out;
+}
+.search-result a{
+    padding: 10px;
+    display: block;
+    color: #333;
+    text-decoration: none;
+    transition: background-color .3s ease-in-out;
+}
+.search-result:hover a{
+    background-color: rgb(0, 0,0,.1);
+}
+.pagination-buttons{
+    background-color: #008cba;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    /* display: none; */
+}
+.pagination-buttons button{
+    background: white;
+    appearance: none;
+    border: none;
+    height: 35px;
+    padding: 0 10px;
+    border-radius: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+}
+.pagination-buttons .active{
+    background-color: rgb(220, 218, 218);
+}
+/* Loading indicator */
+.loading {
+    text-align: center;
+    font-size: 20px;
+    margin: 20px;
+    color: #666;
+}
+
+/* Disabled button styling */
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+
+@media screen and (max-width:800px) {
+    .search-result{
+        width: 45%;
+    }
+}
+@media screen and (max-width:500px) {
+    .search-result{
+        width: 100%;
+    }
+    form{
+        flex-direction: column;
+    }
+    #search-input{
+        margin-bottom: 20px;
+        width: 80%;
+    }
+}
